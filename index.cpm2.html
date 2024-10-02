@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodas de 4 Meses</title>
+    <style>
+        /* Estilos existentes */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, rgba(255, 102, 102, 0.675), rgba(255, 255, 255, 0.8));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            margin-top: 9%;
+            font-family: sans-serif;
+            font-size: 3em;
+            color: #b80532;
+        }
+        
+        h3 {
+            font-family: Arial, sans-serif;
+            font-size: 1.5em;
+            color: white;
+            text-align: center;
+        }
+
+        /* Estilos para a seção de trailers */
+        .trailers {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trailer {
+            margin: 10px 0;
+        }
+
+        .trailer iframe {
+            width: 560px;
+            height: 315px;
+            border: none;
+        }
+        
+        /* Restante do CSS */
+        .countdown {
+            font-size: 1.53em;
+            color: white;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .time-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+
+        .time-label {
+            font-size: 0.5em;
+            text-align: center;
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 20px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .hearts {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            font-size: 24px;
+            animation: float 7s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1200px);
+                opacity: 0;
+            }
+        }
+
+        .question {
+            margin-top: 50px;
+            font-size: 1.5em;
+            color: white;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .emoji-card {
+            font-size: 3em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BODAS DE 4 MESES</h1>
+    <h3> ❤️TEMPO JUNTOS❤️ </h3>
+    
+    <div class="time-together" id="time-together">
+        <span class="time-text" id="time-text"></span>
+    </div>
+
+    <div class="countdown" id="countdown">
+        <div class="time-unit">
+            <span id="days" class="time-number"></span> <span class="time-label">dias</span>
+        </div>
+        <div class="time-unit">
+            <span id="hours" class="time-number"></span> <span class="time-label">horas</span>
+        </div>
+        <div class="time-unit">
+            <span id="minutes" class="time-number"></span> <span class="time-label">minutos</span>
+        </div>
+        <div class="time-unit">
+            <span id="seconds" class="time-number"></span> <span class="time-label">segundos</span>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="foto1.jpg.jpeg" alt="Foto 1">
+        <img src="foto3.jpg.jpeg" alt="Foto 2">
+        <img src="foto4.jpg.jpeg" alt="Foto 3">
+        <img src="foto7.jpg.jpeg" alt="Foto 4">
+        <img src="foto8.jpg.jpeg" alt="Foto 5">
+        <img src="foto9.jpg.jpeg" alt="Foto 6">
+        <img src="foto6.jpg.jpeg" alt="Foto 7">
+        <img src="foto10.jpg.jpeg" alt="Foto 8">
+    </div>
+
+    <div class="hearts" id="hearts-container"></div>
+
+    <div class="question">Você está sendo convidado para comemorar o bodas de Pipoca, deseja aceitar?</div>
+
+    <div class="button-container">
+        <button class="button" onclick="alert('Escolha as opções abaixo dos filmes sugeridos pela sua esposa')">Sim</button>
+    </div>
+
+ 
+
+    <!-- Seção de trailers -->
+    <div class="trailers">
+        <h3>Trailers de Filmes</h3>
+        <div class="trailer">
+      
+        
+        </div>
+        <div class="trailer">
+            <iframe src="https://geo.dailymotion.com/player.html?video=x8y7t4a" allowfullscreen></iframe>
+            <p>Filme 1</p>
+        </div>
+        <div class="trailer">
+            <iframe src="https://geo.dailymotion.com/player.html?video=x8rig3q" allowfullscreen></iframe>
+            <p>Filme 2</p>
+        
+        <!-- Adicione mais trailers conforme necessário -->
+    </div>
+   <!-- Emoji de carta -->
+   <div class="emoji-card" onclick="showMessage()">📩 Clique para abrir a carta</div>
+    <script>
+        function showMessage() {
+            alert('Meu Amor, Hoje comemoramos 4 meses de um amor que transforma meus dias em algo extraordinário. Nestes meses, vivemos tantas experiências incríveis juntos. Cada passeio, cada risada e cada momento compartilhado é uma peça fundamental da nossa história que está apenas começando. A cada dia que passa, a certeza de que quero construir uma vida e uma família ao seu lado se torna mais forte. Te amo mais do que palavras podem expressar, Feliz 4 meses, meu amor!❤️');}
+
+        // Contagem de tempo
+        const startDate = new Date('June 1, 2024 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = now - startDate;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Atualiza os elementos HTML com os valores da contagem
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Corações subindo (usando emojis)
+        const heartsContainer = document.getElementById('hearts-container');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+            heart.style.animationDuration = Math.random() * 3 + 5 + 's';
+            heart.innerHTML = '❤️';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
+❤️TE AMO❤️
+
+</body>
+</html>
+
+
+
+
+
